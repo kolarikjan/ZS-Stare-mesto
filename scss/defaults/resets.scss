@@ -1,5 +1,5 @@
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lexend Deca', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -32,11 +32,16 @@ h1,h2,h3,h4,h5,h6 {
 p,ul,ol {
   color: $tertiary-color;
   font-size: 15px;
+  line-height: 28px;
   font-weight: 400;
 }
 input, textarea {
   outline: none;
   box-shadow: none;
+}
+.w-fit {
+  width: fit-content;
+  width: -moz-fit-content;
 }
 .navbar-toggler {
   border: none !important;

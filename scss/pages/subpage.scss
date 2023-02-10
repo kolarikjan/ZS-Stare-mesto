@@ -1,5 +1,5 @@
 .subpage {
-    padding: 7rem 0;
+    padding: 7rem 0 5rem;
     @include media("sm") {
         padding: 4rem 0;
     }
@@ -141,7 +141,7 @@
                 text-align: center;
             }
             thead {
-                background-color: $background-color-light;
+                background-color: $background-color-darkgrey;
                 th {
                     padding: 1rem 1.5rem;
                     letter-spacing: -0.25px;

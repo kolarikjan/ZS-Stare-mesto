@@ -1,22 +1,18 @@
 .footer {
-    padding: 7.5rem 0 4rem;
-    background-color: $background-color-dark;
-    background-image: url("../img/bg-footer.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: top center;
-    margin-top: 2rem;
+    padding: 5rem 0 4rem;
+    background-color: $background-color-darkgrey;
      @include media("xl") {
         padding: 5.5rem 0 4rem;
     }
     @include media("sm") {
-        padding: 2rem 0 2rem;
+        padding: 4rem 0 4rem;
     }
     h3 {
-        color: $secondary-color;
-        font-family: $alternative-font;
-        font-size: 16px;
+        color: $highlight-color;
+        font-size: 18px;
         font-weight: 600;
+        letter-spacing: -0.025rem;
+        margin-bottom: 1rem;
     }
     p {
         font-size: 14px;
@@ -24,60 +20,67 @@
         color: $darkbg-color;
         margin-bottom: 0;
     }
-    &__pin {
-        background-image: url("../img/icon-pin-blue.png");
-        background-repeat: no-repeat;
-        background-position: left top;
-        padding-left: 2.5rem;
-        @include media("xl") {
-            margin-top: 2rem;
-        }
-        @include media("md") {
-            padding: 2.5rem 0 0 0;
-            background-position: top center;
-            text-align: center;
-        }
-    }
-    &__contacts {
-        padding-left: 4rem;
-        border-left: 1px solid #2a2a2a;
-        @include media("xl") {
-            border-left: 0;
-            padding-left: 2.5rem;
-            margin-top: 2rem;
-        }
-        @include media("md") {
-            padding-left: 0;
-        }
-        @include media("md") {
-            a {
-                margin: 0 auto;
+    
+    &-address {
+        p {
+            font-weight: 500;
+            strong {
+                color: $primary-color;
+                font-size: 15px;
             }
+        }
+        &-pin {
+            background-image: url("../img/icon-pin-black.png");
+            background-repeat: no-repeat;
+            background-position: left top 5px;
+            padding-left: 2.5rem;
         }
         &-tel {
-            font-size: 26px;
-            line-height: 42px;
-            font-family: $alternative-font;
-            color: $secondary-color;
-            font-weight: 500;
+            background-image: url("../img/icon-tel-black.png");
+            background-repeat: no-repeat;
+            background-position: left top 5px;
+            padding-left: 2.5rem;
+            a {
+                color: $primary-color;
+                font-weight: 600;
+            }
         }
         &-mail {
-            font-size: 18px;
-            line-height: 42px;
-            font-weight: 500;
+            background-image: url("../img/icon-mail-black.png");
+            background-repeat: no-repeat;
+            background-position: left top 6px;
+            padding-left: 2.5rem;
+            a {
+                font-weight: 600;
+            }
         }
-        a {
-            @include widthFit();
-            display: block;
-            &:hover {
-                color: $highlight-color;
-                text-decoration: none;
+        @include media("md") {
+            &-mail, &-tel, &-pin {
+                padding-left: 0;
+                padding-top: 1.5rem;
+                background-position: center top;
+            }
+            &-mail {
+                padding-top: 1rem;
+            }
+            &-mail, &-tel {
+                margin-top: .5rem;
             }
         }
     }
-    &__socials {
-        padding-left: 2.5rem;
-        margin-top: 2rem;
+    &-menu {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            a {
+                color: $darkbg-color;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &-socials {
         display: flex;
         align-items: center;
         @include media("md") {
@@ -85,20 +88,30 @@
             justify-content: center;
         }
         a {
-            border: 1px solid $highlight-color;
+            background-color: $background-color;
             width: 45px;
             height: 45px;
-            border-radius: $button-radius;
+            border-radius: 50%;
+            transition-duration: 0.1s;
             @include flexCenter();
             &:not(:last-of-type) {
                 margin-right: .5rem;
             }
+            &:hover {
+                background-color: $highlight-color;
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
         }
+    }
+    @include media("md") {
+        text-align: center;
     }
 }
 .copyright {
-    background-color: $background-color-dark;
-    padding: 0 0 4rem;
+    background-color: $background-color;
+    padding: 2rem 0;
     text-align: center;
     p {
         color: $tertiary-color;

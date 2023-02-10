@@ -1,159 +1,170 @@
 .banner {
-    &__texts {
-        background-image: url("../img/bg-header.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 600px;
-        @include flexCenter();
-        padding-bottom: 4rem;
+    padding: 5rem 0 14rem;
+    background-image: url("../img/header-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include media("lg") {
+        padding: 5rem 0 5rem;
+        background-position: center;
+    }
+    @include media("md") {
+        padding: 4rem 0 4rem;
+    }
+    &-text {
+        border-right: 1px dashed #ffffff85;
+        margin-right: 3.5rem;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         @include media("lg") {
-            margin-top: -2.75rem;
-            padding-top: 2rem;
+            border-right: 0;
+            height: auto;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.5215686275);
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            margin-right: 0;
         }
-        @include media("md") {
-            text-align: center;
-        }
-        h2 {
+        h1 {
             color: $secondary-color;
-            font-family: $alternative-font;
-            font-size: 66px;
+            font-size: 60px;
+            font-weight: 500;
+            letter-spacing: -0.1rem;
             margin-bottom: 2rem;
             @include media("md") {
                 font-size: 52px;
+            }
+            @include media("lg") {
+                font-size: 45px;
+                letter-spacing: -0.05rem;
             }
         }
         p {
             font-size: 20px;
             line-height: 32px;
             color: $secondary-color;
-            max-width: 80%;
-            margin-bottom: 2.5rem;
+            max-width: 90%;
+            margin-bottom: 0rem;
+            font-weight: 300;
             @include media("md") {
                 max-width: 100%;
                 font-size: 16px;
                 line-height: 28px;
             }
         }
-        a.button-white-bordered {
-            @include media("md") {
-                margin: 0 auto;
-            }
-        }
     }
-    &__boxes {
-        display: flex;
-        margin-top: -5rem;
-        margin-right: .5rem;
-        @include media("md") {
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-right: 0;
-        }
-        @include media("sm") {
-            flex-direction: column;
-            align-items: center;
-        }
-        &-box {
-            background-color: $secondary-color;
-            border-radius: 1rem;
-            padding: 2rem 1rem 1.5rem;
-            max-width: 195px;
-            text-align: center;
-            filter: drop-shadow(8.045px 7.502px 17.5px rgba(0,0,0,0.08));
-            &:not(:last-child) {
-                margin-right: 1rem;
-            }
-            @include media("md") {
-                margin-bottom: 1rem;
-            }
+    &-news {
+        h2 {
+            color: $secondary-color;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 2rem;
             @include media("sm") {
-                margin-right: 0 !important;
-                display: flex;
-                align-items: center;
-                max-width: 100%;
-                padding: 1rem;
+                margin-bottom: 1.3rem;
             }
-            h3 {
-                font-size: 18px;
-                font-weight: 600;
-                margin: 1rem 0 0 0;
+        }
+        &-container {
+            margin-bottom: 2.5rem;
+            @include media("sm") {
+                margin-bottom: 1.25rem;
+            }
+        }
+        &-item {
+            .col-12 {
+                @include media("lg") {
+                    display: flex;
+                    align-items: center;
+                }
                 @include media("sm") {
-                    margin: 0 0 0 1rem;
+                    justify-content: center;
                 }
             }
-            &:hover {
-                filter: drop-shadow(8.045px 7.502px 17.5px rgb(0 148 222 / 16%));
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #ffffff38;
             }
         }
-        &-img {
-            background-color: $background-color-light;
-            padding: 0.25rem;
-            height: 95px;
-            width: 95px;
-            border-radius: 10px;
-            @include flexCenter();
-        }
-    }
-    &__item {
-        img {
-            max-height: 720px;
-            min-height: 660px;
-            border-bottom-left-radius: 2.85rem;
-            object-fit: cover;
-            @include media("xl") {
-                min-height: 600px;
+        &-title {
+            color: $secondary-color;
+            font-size: 15px;
+            font-weight: 500;
+            &:hover {
+                color: $secondary-color;
+            }
+            @include media("lg") {
+                text-align: left;
             }
             @include media("sm") {
-                min-height: 450px;
+                text-align: center;
+            }
+        }
+        &-date {
+            background-color: $secondary-color;
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $highlight-color !important;
+            padding: .5rem 1rem .5rem;
+            display: block;
+            @include widthFit();
+            &:hover {
+                background-color: darken($secondary-color, 2.5%);
+                text-decoration: none;
+            }
+            @include media("sm") {
+                margin-bottom: .5rem;
+            }
+        }
+        &-btn {
+            color: $secondary-color !important;
+            font-size: 15px;
+            background-image: url("../img/arrow-right-white.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+            padding-right: 2rem;
+            transition-duration: 0.1s;
+            &:hover {
+                color: $secondary-color;
+                padding-right: 2.25rem;
+                text-decoration: none;
             }
         }
     }
-    .banner__homepage {
-        position: relative;
-        .owl-nav {
-            margin: 0;
-            button {
-                margin: 0; 
+    &-images {
+        position: absolute;
+        bottom: -375px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        .row > .col-12 {
+            &:nth-child(3n + 1) {
                 img {
-                    position: absolute;
-                    bottom: 31px;
-                    z-index: 999;
+                    margin-left: auto;
                 }
             }
-            .owl-prev img {
-                transform: rotate(180deg);
+            &:nth-child(3n + 2) {
+                img {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            &:nth-child(3n) {
+                img {
+                    margin-right: auto;
+                }
             }
         }
-        .owl-dots {
-            position: absolute;
-            @include widthFit();
-            left: 0;
-            right: 0;
-            bottom: 20px;
-            margin: 0 auto;
-            background-color: #ffffff3b;
-            border-radius: 15px;
-            padding: .65rem 2rem;
-            display: flex;
-            align-items: center;
-            .owl-dot {
-                @include flexCenter();
-                span {
-                    background-color: #ffffffa6 !important;
-                    width: 8px !important;
-                    height: 8px !important;
-                    margin: 0px 5px !important;
-                    &:hover {
-                        background-color: #fff !important;
-                    }
-                }
-                &.active span {
-                    background-color: transparent !important;
-                    border: 3px solid #fff !important;
-                    width: 13px !important;
-                    height: 13px !important;
-                } 
-            } 
-        }    
+        img {
+            height: 318px;
+            width: 415px;
+            object-fit: cover;
+        }
+        @include media("lg") {
+            display: none;
+        }
+    }
+    @include media("md") {
+        text-align: center;
     }
 }

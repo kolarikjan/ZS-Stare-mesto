@@ -2,129 +2,66 @@
     background-image: url("../img/bg-news.png");
     background-repeat: no-repeat;
     background-size: cover;
-    &__box {
-        background-color: $background-color;
-        border-radius: 7px;
-        display: flex;
+    &-box {
+        margin-bottom: 3rem;
         @include media("sm") {
             flex-direction: column;
+            margin-bottom: 2.5rem;
+        }
+        &-img {
+            width: 100%;
+            object-fit: cover;
+            height: 275px;
+            @include media("sm") {
+                max-height: 220px;
+            }
+        }
+        &-date {
+            font-size: 14px;
+            color: $primary-color;
+            line-height: 30px;
+            font-weight: 500;
+            margin-bottom: .5rem;
+            @include media("sm") {
+                text-align: center;
+            }
+            span {
+                color: $tertiary-color;
+                &::after {
+                    content: "|";
+                    margin: 0 0.5rem;
+                }
+            }
+        }
+        &-title {
+            margin-bottom: 0.75rem;
+            a {
+                font-size: 20px;
+                color: $highlight-color;
+                line-height: 30px;
+                font-weight: 700;
+                transition-duration: 0.1s;
+                @include media("sm") {
+                    text-align: center;
+                }
+                &:hover {
+                    color: $primary-color;
+                    text-decoration: none;
+                }
+            }
+        }
+        &-desc {
+            line-height: 24px;
+            margin-bottom: 0;
         }
     }
-    &__img {
-        width: 250px !important;
-        object-fit: cover;
-        height: 300px;
-        border-radius: 4px;
-        @include media("sm") {
-            width: 100% !important;
-            max-height: 220px;
-        }
-    }
-    &__body {
-        padding: 2rem 1rem 2rem 2rem;
-        max-width: 55%;
-        @include media("xxl") {
-            padding: 2rem 1rem 2rem 1.25rem;
-        }
+    &-body {
+        padding-top: 1.75rem;
         @include media("sm") {
             max-width: 100%;
         }
     }
-    &__more a {
-        margin-bottom: 1.5rem;
-        background-image: url("../img/arrowLong-right-blue.png");
-        background-repeat: no-repeat;
-        background-position: top 5px right 5px;
-        padding-right: 3rem;
-        font-weight: 600;
-        color: $primary-color;
-        margin-bottom: 3rem;
-        display: block;
-        &:hover {
-            color: $highlight-color;
-            text-decoration: none !important;
-        }
-    }
-    &__date {
-        font-size: 13px;
-        color: $tertiary-color;
-        line-height: 30px;
-        font-weight: 600;
-        margin-bottom: .5rem;
-        @include media("sm") {
-            text-align: center;
-        }
-    }
-    &__title {
-        font-size: 22px;
-        color: $primary-color;
-        font-family: $alternative-font;
-        line-height: 30px;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        @include media("sm") {
-            text-align: center;
-        }
-        &:hover {
-            color: $primary-color;
-            text-decoration: none;
-        }
-    }
-    &__arrowMore {
-        font-size: 14px;
-        color: $primary-color;
-        background-image: url("../img/arrowLong-right-blue.png");
-        background-repeat: no-repeat;
-        background-position: top 5px right 5px;
-        padding-right: 3rem;
-        font-weight: 500;
-        transition-duration: 0.2s;
-        @include widthFit();
-        @include media("sm") {
-            margin: 0 auto;
-        }
-        &:hover {
-            background-position: top 5px right 0px;
-            text-decoration: none;
-        }
-    }
-    .owl-nav {
-        position: absolute;
-        top: 50%;
-        left: -6.5%;
-        right: 0px;
-        width: 113%;
-        transform: translate(0, -50%);
-        margin-top: 0;
-        display: flex;
-        justify-content: space-between;
-        @include media("xxl") {
-            left: -8.5%;
-            width: 117%;
-        }
-        @include media("lg") {    
-            left: -10.5%;
-            width: 121%;
-        }
-        @include media("md") {
-            width: 100%;
-            position: unset;
-            transform: none;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        button {
-            border-radius: $button-radius !important;
-            background-color: $highlight-color !important;
-            width: 50px !important;
-            height: 50px !important;
-            @include flexCenter();
-            img {
-                margin: 0 auto;
-            }
-        }
-        .owl-prev {
-            transform: rotate(180deg);
-        } 
+    @include media("md") {
+        text-align: center;
     }
 }

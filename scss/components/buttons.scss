@@ -1,3 +1,21 @@
+.button-white {
+    display: block;
+    border-radius: $button-radius;
+    border: 2px solid $highlight-color;
+    color: $primary-color;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.95rem 1.5rem;
+    letter-spacing: -0.025rem;
+    @include widthFit();
+    transition-duration: 0.1s;
+    &:hover {
+        background-color: $highlight-color;
+        color: $secondary-color;
+        text-decoration: none;
+    }
+}
 .button-white-bordered {
     display: block;
     border-radius: $button-radius;
@@ -30,12 +48,17 @@
         text-decoration: none;
     }
 }
-.button-arrow-white {
-    padding: 0.95rem 3rem 0.95rem 1.5rem;
-    background-image: url("../img/arrow-right-white.png");
+.button-arrow-red {
+    padding: 0.95rem 4rem 0.95rem 1.5rem;
+    background-image: url("../img/arrow-right-red.png");
     background-repeat: no-repeat;
-    background-position: right 1.25rem center;
+    background-position: right 1.5rem center;
     &:hover {
-        background-image: url("../img/arrow-right-blue.png");
+        background-image: url("../img/arrow-right-white.png");
+    }
+}
+@include media("md") {
+    .button-white {
+        margin: 0 auto;
     }
 }

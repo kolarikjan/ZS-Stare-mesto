@@ -1,92 +1,80 @@
 .about {
-    &__images {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 3rem;
-        img {
-            border-radius: 0.5rem;
-            object-fit: cover;
-            height: 410px;
-            &:not(:last-child) {
-                margin-right: 1rem;
-            }
-        }
-        @include media("lg") {
-            justify-content: center;
-            align-items: center;
-            margin-top: 5rem;
-        }
-        @include media("sm") {
-            margin-top: 3.5rem;
-        }
+    padding: 13.5rem 0 6rem;
+    .section-title {
+        margin-bottom: 1.5rem;
     }
-    &__description p {
-        font-size: 15px;
-        line-height: 26px;
-        font-weight: 500;
+    @include media("lg") {
+        padding: 4rem 0 4rem;
+    }
+    &-description p {
+        font-size: 20px;
+        line-height: 36px;
+        font-weight: 400;
+        color: $primary-color;
         margin-bottom: 3rem;
-        @include media("md") {
-            text-align: center;
-        }
         @include media("sm") {
             margin-bottom: 1.5rem;
         }
     }
-    &__container {
-        margin-left: 3rem;
-        @include min-media("xxl") {
-            margin-left: 5rem;
-            max-width: 80%;
-        }
-        @include media("lg") {
-            margin-left: 1.5rem;
-        }
+    &-numbers {
+        margin-top: 5.25rem;
+        margin-left: 2.5rem;
         @include media("md") {
             margin-left: 0;
+            margin-top: 3rem;
         }
-    }
-    &__numbers {
-        margin-top: 3rem;
-        display: flex;
-        @include media("md") {
-            text-align: center;
-            justify-content: space-between;
-        }
-        @include media("sm") {
-            flex-direction: column;
-        }
-        & > div {
+        &-item {
             display: flex;
             flex-direction: column;
-            &:not(:last-child) {
-                padding: 0 2.5rem 0 0;
-                @include media("xxl") {
-                    padding: 0 1rem 0 0;
-                }
-                @include media("xl") {
-                    padding: 0 2rem 0 0;
-                }
-                @include media("md") {
-                    padding: 0;
-                }
-            }
-            @include media("sm") {
-                width: 100%;
-                &:not(:last-of-type) {
-                    margin-bottom: 1rem;
-                }
-            }
-            img {
-                margin: 0 auto 1rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            max-width: 190px;
+            margin: 0 auto;
+            aspect-ratio: 1/1;
+            @include media("md") {
+                margin-bottom: 1rem;
             }
         }
+        .col-12 {
+            &:nth-child(3n + 1) {
+                .about-numbers-item {
+                    background-color: #e9f4fc;
+                }
+                .about-numbers-count {
+                    color: #2d74a8;
+                }
+            }
+            &:nth-child(3n + 2) {
+                .about-numbers-item {
+                    background-color: #ffefef;
+                }
+                .about-numbers-count {
+                    color: #d14347;
+                }
+            }
+            &:nth-child(3n) {
+                .about-numbers-item {
+                    background-color: #f2f6dd;
+                }
+                .about-numbers-count {
+                    color: #97ac1c;
+                }
+            }
+        }
+        &-icon {
+            margin-bottom: .5rem;
+        }
         &-count {
-            color: $primary-color;
-            font-family: $alternative-font;
-            font-size: 55px;
-            line-height: 60px;
-            font-weight: 400;
+            font-size: 45px;
+            line-height: 50px;
+            font-weight: 500;
             margin-bottom: 0.25rem;
+            @include media("xxl") {
+                font-size: 35px;
+                line-height: 40px;
+                margin-bottom: 0;
+            }
         }
         &-description {
             font-weight: 500;
@@ -94,6 +82,7 @@
         }
     }
     @include media("md") {
+        text-align: center;
         .button-blue {
             margin: 0 auto;
         }

@@ -1,7 +1,13 @@
 .header {
     background-color: $background-color;
-    &__nav {
+    &-logo {
+        @include media("xxl") {
+            margin-bottom: .5rem;
+        }
+    }
+    &-nav {
         padding: 1.5rem 0;
+        width: 100%;
         @include media("xxl") {
             flex-wrap: wrap;
             @include flexCenter();
@@ -15,19 +21,77 @@
     }
     #nav {
         .navbar-nav {
-            margin: 0 auto;
+            margin: 0 0 0 auto;
+            display: flex;
+            align-items: center;
+            @include media("xxl") {
+                margin: 0 auto;
+            }
             @include media("lg") {
                 text-align: center;
             }
         }
         .nav-item {
+            .dropdown-hover {
+                position: relative;
+                &-menu {
+                    position: absolute;
+                    display: none;
+                    z-index: 1000;
+                    margin-left: 1rem;
+                    padding-top: .5rem;
+                    @include media("lg") {
+                        margin-left: 0;
+                        margin-bottom: .5rem;
+                    }
+                    & > div {
+                        padding: 1.5rem 1.75rem;
+                        background-color: $background-color-darkgrey;
+                        &::before {
+                            content: "";
+                            background-image: url("../img/dropdown-triangle.png");
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            width: 21px;
+                            height: 11px;
+                            position: absolute;
+                            display: block;
+                            top: -11px;
+                            left: 10px;
+                            @include media("lg") {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                    @include media("lg") {
+                        position: unset;
+                        text-align: center;
+                    }
+                }    
+                &-item {
+                    color: $primary-color;
+                    transition-duration: 0.1s;
+                    font-size: 15px;
+                    font-weight: 600;
+                    &:hover {
+                        color: $highlight-color;
+                        text-decoration: none;
+                    }
+                    @include media("lg") {
+                        line-height: 32px;
+                    }
+                }     
+            }
             .nav-link {
                 color: $primary-color;
                 font-size: 15px;
-                font-weight: 600;
+                font-weight: 700;
                 padding: 0.5rem 1rem;
                 margin-right: 0.25rem;
                 text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: -0.025rem;
                 @include media("lg") {
                     margin-right: 0;
                     padding: 0.4rem 0;
@@ -62,39 +126,33 @@
             padding: 1.25rem 0;
         }
     }
-    &__rightbox {
-        &-img {
-            border: 2px solid $highlight-color;
-            border-radius: $button-radius;
-            -webkit-border-radius: $button-radius;
-            -moz-border-radius: $button-radius;
-            -ms-border-radius: $button-radius;
-            -o-border-radius: $button-radius;
-            padding: 0.5rem 0.35rem;
-            margin-right: 1rem;
-            img {
-                margin-left: 0.25rem;
-            }
-        }
-        .header__button {
-            @include media("xxl") {
-                display: none;
-            }
-        }
-        .header__contact {
-            @include media("lg") {
-                display: none;
-            }
-        }
-        @include flexCenterDir(row); 
+    &-buttons {
+        margin-left: 4rem;
         @include media("xxl") {
-            padding: 0.5rem 0;
+            margin-left: 0;
         }
         @include media("lg") {
-            width: 100%;
+            margin-top: 1.5rem;
         }
-        @include media("lg") {
-            display: none;
+        &-item {
+            border-radius: 50%;
+            border: 2px solid #e2e2e2;
+            height: 48px;
+            width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition-duration: 0.1s;
+            &:not(:last-child) {
+                margin-right: 0.75rem;
+            }
+            &:hover {
+                border: 2px solid $highlight-color;
+                background-color: $highlight-color;
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
         }
     }
     &__contact {
@@ -173,6 +231,64 @@
                         font-weight: 500;
                     }
                 }
+            }
+        }
+    }
+    &-search {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ecececf0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        &.active {
+            display: flex;
+        }
+        &-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            filter: brightness(0);
+            transition-duration: 0.1s;
+            &:hover {
+                filter: none;
+            }
+        }
+        &-input {
+            width: 420px;
+            height: 60px;
+            border: none;
+            border-top-left-radius: $button-radius;
+            border-bottom-left-radius: $button-radius;
+            padding: 0 1.5rem;
+            color: $primary-color;
+            font-size: 15px;
+            &::placeholder {
+                color: $primary-color;
+            }
+            @include media("md") {
+                width: auto;
+                max-width: 100%;
+            }
+        }
+        &-submit {
+            width: 60px;
+            height: 60px;
+            background-color: $background-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-top-right-radius: $button-radius;
+            border-bottom-right-radius: $button-radius;
+            transition-duration: 0.1s;
+            &:hover img {
+                filter: brightness(0);
             }
         }
     }

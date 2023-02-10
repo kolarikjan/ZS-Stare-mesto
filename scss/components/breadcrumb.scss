@@ -1,0 +1,54 @@
+.breadcrumb {
+    padding: 5rem 0 5rem;
+    background-image: url("../img/header-background2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
+    @include media("sm") {
+        padding: 4rem 0;
+    }
+    h1 {
+        color: $secondary-color;
+        font-size: 52px;
+        font-weight: 500;
+        letter-spacing: -0.075rem;
+        margin-bottom: 1.25rem;
+        @include media("sm") {
+            margin-bottom: 0;
+        }
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        background-image: url("../img/icon-home-white.png");
+        background-repeat: no-repeat;
+        background-position: top 4px left;
+        a {
+            color: $secondary-color;
+            font-size: 15px;
+            font-weight: 300;
+        }
+        li {
+            &:not(:last-child)::after {
+                content: "/";
+                color: $secondary-color;
+                margin: 0 .75rem;
+            }
+            &:last-child a {
+                font-weight: 500;
+            }
+        }
+        @include media("md") {
+            @include widthFit();
+            margin: 0 auto;
+        }
+        @include media("sm") {
+            display: none;
+        }
+    }
+    @include media("md") {
+        text-align: center;
+    }
+}
