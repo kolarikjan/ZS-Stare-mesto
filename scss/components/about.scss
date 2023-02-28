@@ -1,0 +1,101 @@
+.about {
+    &__images {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 3rem;
+        img {
+            border-radius: 0.5rem;
+            object-fit: cover;
+            height: 410px;
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+        @include media("lg") {
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+        }
+        @include media("sm") {
+            margin-top: 3.5rem;
+        }
+    }
+    &__description p {
+        font-size: 15px;
+        line-height: 26px;
+        font-weight: 500;
+        margin-bottom: 3rem;
+        @include media("md") {
+            text-align: center;
+        }
+        @include media("sm") {
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__container {
+        margin-left: 3rem;
+        @include min-media("xxl") {
+            margin-left: 5rem;
+            max-width: 80%;
+        }
+        @include media("lg") {
+            margin-left: 1.5rem;
+        }
+        @include media("md") {
+            margin-left: 0;
+        }
+    }
+    &__numbers {
+        margin-top: 3rem;
+        display: flex;
+        @include media("md") {
+            text-align: center;
+            justify-content: space-between;
+        }
+        @include media("sm") {
+            flex-direction: column;
+        }
+        & > div {
+            display: flex;
+            flex-direction: column;
+            &:not(:last-child) {
+                padding: 0 2.5rem 0 0;
+                @include media("xxl") {
+                    padding: 0 1rem 0 0;
+                }
+                @include media("xl") {
+                    padding: 0 2rem 0 0;
+                }
+                @include media("md") {
+                    padding: 0;
+                }
+            }
+            @include media("sm") {
+                width: 100%;
+                &:not(:last-of-type) {
+                    margin-bottom: 1rem;
+                }
+            }
+            img {
+                margin: 0 auto 1rem;
+            }
+        }
+        &-count {
+            color: $primary-color;
+            font-family: $alternative-font;
+            font-size: 55px;
+            line-height: 60px;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+        &-description {
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+    @include media("md") {
+        .button-blue {
+            margin: 0 auto;
+        }
+    }
+}

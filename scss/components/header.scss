@@ -1,0 +1,179 @@
+.header {
+    background-color: $background-color;
+    &__nav {
+        padding: 1.5rem 0;
+        @include media("xxl") {
+            flex-wrap: wrap;
+            @include flexCenter();
+        }
+        @include media("lg") {
+            justify-content: space-between;
+        }
+        @include media("sm") {
+            padding: 1rem 0;
+        }
+    }
+    #nav {
+        .navbar-nav {
+            margin: 0 auto;
+            @include media("lg") {
+                text-align: center;
+            }
+        }
+        .nav-item {
+            .nav-link {
+                color: $primary-color;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 0.5rem 1rem;
+                margin-right: 0.25rem;
+                text-decoration: none;
+                @include media("lg") {
+                    margin-right: 0;
+                    padding: 0.4rem 0;
+                }
+            }
+            &.active .nav-link, .nav-link:hover {
+                color: $highlight-color;
+            }
+            &.header__button {
+                display: none;
+                a {
+                    width: 100%;
+                }
+                @include media("xxl") {
+                    display: block;
+                }
+            }
+            &.header__contact {
+                display: none;
+                @include media("lg") {
+                    display: flex;
+                }
+            }
+        }
+        @include media("xxl") {
+            padding-left: 0rem;
+            padding: 0.75rem 0;
+            width: 100%;
+            justify-content: center;
+        }
+        @include media("lg") {
+            padding: 1.25rem 0;
+        }
+    }
+    &__rightbox {
+        &-img {
+            border: 2px solid $highlight-color;
+            border-radius: $button-radius;
+            -webkit-border-radius: $button-radius;
+            -moz-border-radius: $button-radius;
+            -ms-border-radius: $button-radius;
+            -o-border-radius: $button-radius;
+            padding: 0.5rem 0.35rem;
+            margin-right: 1rem;
+            img {
+                margin-left: 0.25rem;
+            }
+        }
+        .header__button {
+            @include media("xxl") {
+                display: none;
+            }
+        }
+        .header__contact {
+            @include media("lg") {
+                display: none;
+            }
+        }
+        @include flexCenterDir(row); 
+        @include media("xxl") {
+            padding: 0.5rem 0;
+        }
+        @include media("lg") {
+            width: 100%;
+        }
+        @include media("lg") {
+            display: none;
+        }
+    }
+    &__contact {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0.25rem 0;
+        &-title {
+            color: $tertiary-color;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        &-phone {
+            font-weight: 600;
+            font-size: 16px;
+            color: $highlight-color;
+        }
+        @include media("lg") {
+            margin: .5rem 0 0 0;
+            padding: 0;
+        }
+    }
+    &__subpage {
+        background-image: url("../img/subpage-bg.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__breadcrumb {
+        background-image: url("../img/bg-subpage.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 2.5rem 0 6rem;
+        @include media("sm") {
+            background-image: url("../img/bg-subpageMobile.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 2.5rem 0 2.5rem;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            font-family: $alternative-font;
+            color: $secondary-color;
+            text-align: center;
+            @include min-media("sm") {
+                display: none;
+            }
+        }
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style: none;
+            @include widthFit();
+            @include media("sm") {
+                display: none;
+            }
+            li {
+                a {
+                    font-weight: 400;
+                    font-size: 13px;
+                    color: $secondary-color;
+                }
+                &:not(:last-of-type) {
+                    a {
+                        background-image: url("../img/arrow-breadcrumb.png");
+                        padding-right: 2.25rem;
+                        background-repeat: no-repeat;
+                        background-position: right 8px center;
+                    }
+                }
+                &:last-of-type {
+                    a {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

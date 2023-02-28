@@ -1,0 +1,70 @@
+.services {
+    &__box {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        @include media("md") {
+            flex-direction: column;
+            align-items: center;
+            div {
+                text-align: center;
+            }
+        }
+        img {
+            margin-right: 2.5rem;
+            max-width: 280px;
+            max-height: 280px;
+            @include media("xxl") {
+                max-width: 240px;
+                max-height: 240px;
+                margin-right: 1.5rem;
+            }
+            @include media("md") {
+                margin-right: 0;
+            }
+        }
+    }
+    &__title {
+        font-size: 24px;
+        letter-spacing: -0.5px;
+        color: $primary-color;
+        font-weight: 600;
+        display: block;
+        margin: 1.75rem 0 1.25rem;
+        &:hover {
+            color: $highlight-color;
+            text-decoration: none;
+        }
+        @include media("xxl") {
+            margin: 0 0 1.25rem;
+        }
+        @include media("xl") {
+            margin: 1.75rem 0 1.25rem;
+        }
+    }
+    &__desctiption {
+        color: $secondary-color;
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 1rem;
+        max-width: 90%;
+        @include media("md") {
+            max-width: 100%;
+        }
+    }
+    &__link {
+        color: $highlight-color !important;
+        font-size: 13px;
+        line-height: 26px;
+        font-weight: 600;
+        background-image: url("../img/arrow-more.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        padding-right: 3rem;
+        transition-duration: 0.1s;
+        &:hover {
+            background-image: url("../img/arrow-morered.png");
+            text-decoration: none;
+        }
+    }
+}

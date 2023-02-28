@@ -1,0 +1,51 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+body {
+  overflow-x: hidden;
+}
+body {
+  background-color: $background-color;
+}
+a {
+  text-decoration: none;
+  color: $highlight-color;
+}
+a:hover {
+  text-decoration: underline;
+  color: $highlight-color;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: $primary-color;
+}
+p,ul,ol {
+  color: $tertiary-color;
+  font-size: 15px;
+  font-weight: 400;
+}
+input, textarea {
+  outline: none;
+  box-shadow: none;
+}
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.owl-carousel .owl-nav button {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}

@@ -1,0 +1,46 @@
+.section {
+    padding: 5rem 0 7rem;
+    &__pretitle {
+        background-color: $background-color-light;
+        color: $tertiary-color;
+        text-transform: uppercase;
+        font-size: 13px;
+        border-radius: $button-radius;
+        padding: .25rem .75rem;
+        @include widthFit();
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        @include media("md") {
+            margin: 0 auto 1.5rem;
+        }
+        &-light {
+            background-color: $background-color;
+        }
+    }
+    &__title {
+        @include media("md") {
+            width: 100%;
+        }
+        &-center {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+    &__title h2, &__title h1 {
+        font-size: 45px;
+        line-height: 60px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        margin-bottom: 1.5rem;
+        @include media("md") {
+            text-align: center;
+        }
+        @include media("sm") {
+            margin-bottom: 1rem !important;
+        }
+    }
+    &__title h2 {
+        margin-bottom: 3rem !important;
+    }
+}
