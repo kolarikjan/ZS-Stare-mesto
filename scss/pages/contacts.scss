@@ -1,0 +1,124 @@
+.subpage .contacts {
+    &-box {
+        padding: 5rem 0;
+        @include media("md") {
+            text-align: center;
+            padding: 3.5rem 0 2.5rem;
+            &-body {
+                padding: 15px 0;
+            }
+        }
+        &-header {
+            background-color: $background-color-darkgrey;
+            p, b, strong {
+                font-size: 17px;
+                margin-bottom: 0;
+                line-height: 36px;
+                color: $primary-color;
+            }
+            img {
+                max-height: 325px;
+                margin: 0 0 0 auto;
+                @include media("md") {
+                    margin: 0 auto;
+                }
+            }
+            iframe {
+                max-height: 325px;
+                width: 100%;
+            }
+        }
+        &-contact {
+            border: 1px solid $subpage-border-color;
+            padding: 1.25rem 1.5rem;
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+            }
+            p {
+                margin-bottom: 0;
+                color: $primary-color;
+                font-weight: 700;
+            }
+            span {
+                color: $darkbg-color;
+                font-weight: 400;
+                font-size: 15px;
+            }
+        }
+        &-tel {
+            color: $primary-color;
+            font-size: 15px;
+            font-weight: 600;
+            transition-duration: 0.1s;
+            display: block;
+            line-height: 29px;
+            &:hover {
+                text-decoration: none;
+                color: $highlight-color;
+            }
+        }
+        &-mail {
+            color: $highlight-color;
+            font-size: 15px;
+            font-weight: 600;
+            transition-duration: 0.1s;
+            display: block;
+            line-height: 29px;
+            &:hover {
+                text-decoration: none;
+                color: $primary-color;
+            }
+        }
+    }
+    &-map {
+        margin-top: 3rem;
+        @include min-media("xl") {
+            margin-top: 4rem;
+        }
+    }
+    h3 {
+        margin-top: 0;
+    }
+    @include media("lg") {
+        .footer__pin{
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+        }
+    }
+    &__phones {
+        padding-left: 4rem;
+        @include media("xl") {
+            border-left: 0;
+            padding-left: 2.5rem;
+            margin-top: 0rem;
+        }
+        @include media("md") {
+            padding-left: 0;
+        }
+        @include media("md") {
+            a {
+                margin: 0 auto;
+            }
+        }
+        &-tel {
+            font-size: 26px;
+            line-height: 42px;
+            font-family: $alternative-font;
+            color: $primary-color;
+            font-weight: 500;
+        }
+        &-mail {
+            font-size: 18px;
+            line-height: 42px;
+            font-weight: 500;
+        }
+        a {
+            @include widthFit();
+            display: block;
+            &:hover {
+                color: $highlight-color;
+                text-decoration: none;
+            }
+        }
+    }
+}

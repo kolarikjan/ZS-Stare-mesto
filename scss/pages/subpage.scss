@@ -1,11 +1,11 @@
 .subpage {
-    padding: 7rem 0 5rem;
+    padding: 5rem 0 6rem;
     @include media("sm") {
         padding: 4rem 0;
     }
     p, td {
-        color: $tertiary-color;
-        font-size: 14px;
+        color: $darkbg-color;
+        font-size: 15px;
         line-height: 29px;
         @include media("md") {
             text-align: center;
@@ -15,6 +15,7 @@
         padding-left: 1rem;
         margin: 0 0 1rem 0;
         li {
+            color: $darkbg-color;
             font-size: 14px;
             line-height: 35px;
             &::marker {
@@ -25,10 +26,11 @@
     }
     ul {
         margin: 0 0 1rem 0;
-        font-size: 14px;
+        font-size: 15px;
         padding-left: 0;
         list-style: none;
         li {
+            color: $darkbg-color;
             padding-left: 1rem;
             background-image: url("../img/li.png");
             background-repeat: no-repeat;
@@ -47,92 +49,83 @@
         font-size: 14px;
         line-height: 28px;
     }
-    
-    &__photo {
-        max-width: 600px;
-        max-height: 430px;
-        padding-left: 4rem;
-        padding-bottom: 4rem;
-        float: right;
-        @include media("xl") {
-            float: unset;
-            padding-left: 0;
-            margin-bottom: 3rem;
-            padding-bottom: 0;
+    &-mainText { 
+        max-width: 95%;
+        @include media("xxl") {
+            max-width: unset;
+        }
+        p {
+            color: $primary-color;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 34px;
+            @include media("md") {
+                font-size: 17px;
+                line-height: 30px;
+            }
         }
     }
-    h1 {
+    &-photo {
+        max-width: 600px;
+        max-height: 430px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        @include media("md") {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    h2 {
         color: $primary-color;
-        font-family: $alternative-font;
-        font-size: 45px;
-        line-height: 60px;
-        margin-bottom: 4rem;
+        font-size: 38px;
+        line-height: 48px;
+        margin-bottom: 2.5rem;
+        margin-top: 3.5rem;
         font-weight: 600;
         letter-spacing: -1px;
         @include media("md") {
             text-align: center;
-            margin-bottom: 2.25rem;
-        }
-        @include media("sm") {
-            display: none;
             font-size: 28px;
             line-height: 38px;
+            margin-bottom: 2rem;
+            margin-top: 2.25rem;
+        }
+    }
+    h3 {
+        color: $primary-color;
+        font-size: 30px;
+        line-height: 42px;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        @include media("md") {
+            text-align: center;
+            font-size: 22px;
+            line-height: 32px;
             margin-bottom: 1.5rem;
             margin-top: 2rem;
         }
     }
-    &__content {
-        h2{
-            color: $primary-color;
-            font-family: $alternative-font;
-            font-size: 32px;
-            line-height: 42px;
-            margin-bottom: 3rem;
-            margin-top: 4rem;
-            font-weight: 600;
-            letter-spacing: -1px;
-            @include media("md") {
-                text-align: center;
-                font-size: 28px;
-                line-height: 38px;
-                margin-bottom: 1.5rem;
-                margin-top: 2rem;
-            }
+    h4 {
+        color: $primary-color;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+        @include media("md") {
+            text-align: center;
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
         }
-        h3 {
-            color: $primary-color;
-            font-family: $alternative-font;
-            font-size: 24px;
-            line-height: 36px;
-            margin-bottom: 2.5rem;
-            margin-top: 3.5rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            @include media("md") {
-                text-align: center;
-                font-size: 22px;
-                line-height: 32px;
-                margin-bottom: 1.5rem;
-                margin-top: 2rem;
-            }
-        }
-        h4 {
-            color: $primary-color;
-            font-family: $alternative-font;
-            font-size: 20px;
-            line-height: 30px;
-            margin-bottom: 2rem;
-            margin-top: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            @include media("md") {
-                text-align: center;
-                font-size: 18px;
-                line-height: 28px;
-                margin-bottom: 1rem;
-                margin-top: 1.5rem;
-            }
-        }
+    }
+    &-content {
         table {
             width: 100%;
             overflow-y: scroll;
@@ -145,18 +138,18 @@
                 th {
                     padding: 1rem 1.5rem;
                     letter-spacing: -0.25px;
-                    border-top: 1px solid #eeeeee;
-                    font-size: 14px;
+                    border-top: 1px solid $subpage-border-color;
+                    font-size: 15px;
                     color: $primary-color;
                 }
             }
             td {
                 padding: 1rem 1.5rem;
-                border-top: 1px solid #eeeeee;
+                border-top: 1px solid $subpage-border-color;
             }
         }
     }
-    &__content > *:first-child {
+    &-content > *:first-child {
         margin-top: 0;
     }
 }

@@ -1,7 +1,14 @@
 // Defaults
 @import "defaults/variables.scss";
+// sablonu vytvoril Jan Kolarik
+// www.jan-kolarik.czs
+
 @import "defaults/resets.scss";
 @import "defaults/functions.scss";
+
+// Pages
+@import "pages/subpage.scss";
+@import "pages/contacts.scss";
 
 // Components
 @import "components/header.scss";
@@ -14,11 +21,8 @@
 @import "components/partners.scss";
 @import "components/footer.scss";
 @import "components/breadcrumb.scss";
-//@import "components/contactform.scss";
-
-// Pages
-@import "pages/subpage.scss";
-@import "pages/contact.scss";
+@import "components/downloadfiles.scss";
+@import "components/contactform.scss";
 
 // Style 
 @media (min-width: map-get($breaks, "xxl")) {

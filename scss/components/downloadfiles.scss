@@ -1,0 +1,41 @@
+.downloadFiles {
+    margin-bottom: 4rem;
+    h4 {
+        color: $primary-color;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+        @include media("md") {
+            text-align: center;
+        }
+    }
+    &-list {
+        list-style: none;
+        margin: 1rem 0;
+        padding: 0;
+        li {
+            background-image: none !important;
+            padding-left: 0 !important;
+            &:not(:last-child) {
+                margin-bottom: .4rem;
+            }
+        }
+        a {
+            border: 1px solid $subpage-border-color;
+            display: block;
+            padding: .75rem 2.5rem;
+            background-image: url("../img/icon-file-red.png");
+            background-repeat: no-repeat;
+            background-position: left 12px center;
+            color: $primary-color !important;
+            font-weight: 600;
+            &:hover {
+                text-decoration: none;
+                background-color: lighten($subpage-border-color, 5%);
+            }
+        }
+    }
+}

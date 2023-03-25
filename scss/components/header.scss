@@ -32,6 +32,9 @@
             }
         }
         .nav-item {
+            @include media("md") {
+                width: 100%;
+            }
             .dropdown-hover {
                 position: relative;
                 &-menu {
@@ -133,6 +136,9 @@
         }
         @include media("lg") {
             margin-top: 1.5rem;
+            & > div {
+                justify-content: center;
+            }
         }
         &-item {
             border-radius: 50%;
